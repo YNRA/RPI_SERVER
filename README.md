@@ -3,7 +3,7 @@
 
 | Nom                                 | Classe | Spécialisation        |
 | ----------------------------------- | ------ | --------------------- |
-| Arnaud BOYÉ (@YNRA)               | B3     | Sécurité Informatique |
+| Arnaud BOYÉ (@YNRA)                 | B3     | Sécurité Informatique |
 | Thomas DEJEANNE (@Gomonriou)        | B3     | Sécurité Informatique |
 
 * Home server shared between us
@@ -14,13 +14,15 @@
 * Attack device w/ mandatory tools only (Fuzzing, Network Mapping, Cracking, etc.)
     * Katoolin (install tools, update, etc.)
 * Security hardening
-     Partitioning
+    * Partitioning
     * SSH w/ authorized keys and hosts only (us)
     * Monitoring (Netdata? Grafana? Prometheus?)
     * HIDS
-    * Firewall (Pfsense? Stormshield? Iptables?)
+    * Firewall (Iptables?)
     * Local storage
     * Backups & Restoration (CRON, DB)
+    * Restrictions & SSH Jail (Fail2Ban, Endless SSH) 
+    * VPN 1:1 between hosts
 
 **Documentation:**
 
@@ -34,6 +36,7 @@
 * [InfoSec tools en CentOS](https://www.unixmen.com/install-kali-linux-tools-on-ubuntu-and-centos/)
 * [Synchronize directory between two hosts](https://bogdanvlviv.com/posts/rsync/how-to-synchronize-a-directory-between-two-remote-hosts-with-rsync.html)
 * [IPTABLES on RPI](https://www.fanjoe.be/?p=1003)
+* [Endless SSH](https://github.com/skeeto/endlessh)
 
 ## TO DO
 * Trello ? 
