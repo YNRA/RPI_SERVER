@@ -1,21 +1,26 @@
 # RASPBERRY PI SERVER [Group #55]
 
 
+| Nom                                 | Classe | Spécialisation        |
+| ----------------------------------- | ------ | --------------------- |
+| Arnaud BOYÉ (@YNRA)               | B3     | Sécurité Informatique |
+| Thomas DEJEANNE (@Gomonriou)        | B3     | Sécurité Informatique |
+
 * Home server shared between us
-    > Hidden Service TOR
-    > Clear Web (Apache)
+    * Hidden Service TOR
+    * Clear Web (Apache)
 
 * VPN
 * Attack device w/ mandatory tools only (Fuzzing, Network Mapping, Cracking, etc.)
-    > Katoolin (install tools, update, etc.)
+    * Katoolin (install tools, update, etc.)
 * Security hardening
-    > Partitioning
-    > SSH w/ authorized keys and hosts only (us)
-    > Monitoring (Netdata? Grafana? Prometheus?)
-    > HIDS
-    > Firewall (Pfsense? Stormshield? Iptables?)
-    > Local storage
-    > Backups & Restoration (CRON, DB)
+     Partitioning
+    * SSH w/ authorized keys and hosts only (us)
+    * Monitoring (Netdata? Grafana? Prometheus?)
+    * HIDS
+    * Firewall (Pfsense? Stormshield? Iptables?)
+    * Local storage
+    * Backups & Restoration (CRON, DB)
 
 **Documentation:**
 
@@ -32,7 +37,7 @@
 ## TO DO
 * Trello ? 
 
-# OS choice
+## OS choice
  * 64-bits (use everything)
  * Update frequency
  * No desktop, only CLI
