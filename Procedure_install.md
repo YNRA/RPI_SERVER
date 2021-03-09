@@ -3,6 +3,14 @@
 - changer clavier install les packets + dpkg-reconfigure locales
 - activer wifi nano /etc/network/interfaces.d/wlan0 mettre ssid et le mdp puis reboot
 - fixer l'addresse ip
+/etc/network/interfaces.d/wlan0
+iface enp0s3 inet static
+    address 192.168.1.99
+    netmask 255.255.255.0
+    network 192.168.1.1
+    broadcast 192.168.1.255
+    gateway 192.168.1.1
+pareil mais /etc/network/interfaces.d/eth0 pour l'ethernet
 
 - desactiver ipv6 dans /etc/sysctl.conf
 net.ipv6.conf.all.disable_ipv6 = 1
@@ -32,3 +40,7 @@ sudo whoami
 chmod go-w ~/
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
+
+- ohmyzsh
+apt update && apt install fonts-powerline git curl zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
