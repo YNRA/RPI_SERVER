@@ -44,3 +44,14 @@ chmod 600 ~/.ssh/authorized_keys
 - ohmyzsh
 apt update && apt install fonts-powerline git curl zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+- wpa-supplicant (Debian)
+/etc/wpa-supplicant
+
+network={
+	ssid="ssid_du_reseau"
+	psk="password"
+	id_str="monreseau"
+}
+
+apt-install wicd-curses for easy network management
