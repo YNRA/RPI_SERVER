@@ -1,3 +1,4 @@
 #!/bin/sh
-rsync --verbose -e "ssh -p 22" --recursive --update --archive --compress  --omit-dir-times gomonriou@10.6.0.2:/home/shared/ /home/shared/
-rsync --verbose -e "ssh -p 22" --recursive --update --archive --compress  --omit-dir-times /home/shared/ gomonriou@10.6.0.2:/home/shared/
+sleep 2
+rsync --verbose -e "ssh -p 22" --recursive --update --archive --compress --times --delete  /home/shared/ gomonriou@10.6.0.2:/home/shared/
+rsync --berbose -e "ssh -p 22" --recursive --update --archive --compress --times --delete gomonirou@10.6.0.2:/home/shared/ /home/shared/
