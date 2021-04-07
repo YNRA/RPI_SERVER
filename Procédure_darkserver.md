@@ -1,7 +1,7 @@
 apt-get install tor
 mkdir /var/www/darkserver
 mettre l'html dedans
-python3 -m http.server --bind 127.0.0.1 <port>
+python3 -m http.server --bind 127.0.0.1 5631
 
 dans /etc/tor/torrc l71 decomenter et changer le port
 HiddenServiceDir /var/lib/tor/hidden_service/
