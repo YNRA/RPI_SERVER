@@ -10,6 +10,13 @@ iptables -t filter -P FORWARD DROP
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
+# DROP XMAS, NULL, PORTS SCANS
+iptables -A INPUT -p tcp --tcp-flags FIN,URG,PSH FIN,URG,PSH -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL ALL -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL NONE -j DROP
+iptables -A INPUT -p tcp --tcp-flags SYN,RST SYN,RST -j DROP
+iptables -A FORWARD -p tcp --tcp-flags SYN,ACK,FIN,RST RST -m limit --limit 1/s -j ACCEPT
+
 # ACCEPT ICMP FROM VPN NETWORK
 iptables -A INPUT -p icmp -s 10.6.0.0/29 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
 
