@@ -29,7 +29,7 @@ iptables -A INPUT -p udp --dport 53 -m state --state NEW -j ACCEPT
 
 # VPN ROUTE
 iptables -A POSTROUTING -s 10.6.0.0/24 -o wlan0 -m comment --comment wireguard-nat-rule -j MASQUERADE
-
+iptables -A POSTROUTING -s 10.6.0.0/24 -o eth0 -m comment --comment wireguard-nat-rule -j MASQUERADE
 # LOG DENIED IP
 iptables -A INPUT -m limit --limit 5/min -j LOG --log-prefix "IPTABLES DENIED: " --log-level 7
 
