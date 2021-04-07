@@ -1,5 +1,5 @@
 sudo apt-get install fail2ban
-sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.d/custom.conf
 
 edit /etc/fail2ban/jail.local
 
