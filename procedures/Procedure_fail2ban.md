@@ -1,7 +1,10 @@
 sudo apt-get install fail2ban
-sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.d/custom.conf
 
 edit /etc/fail2ban/jail.local
+
+
+ignoreip = 10.6.0.0/29
 
 [sshd]
 port = ssh
@@ -17,4 +20,18 @@ backend = %(sshd_backend)s
 
 sudo service fail2ban restart
 
+# check status of jails
+sudo fail2ban-client status
 
+# stop particular jail
+sudo fail2ban-client stop sshd
+
+# ban ip manually
+fail2ban-client set [jail_name] banip [IP]
+
+# unban ip manually
+fail2ban-client set [jail_name] unbanip [IP]
+
+# check logs
+
+sudo tail -f /var/log/fail2bab.log
