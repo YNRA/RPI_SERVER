@@ -4,8 +4,6 @@ sleep 1
 # FLUSH RULES & START FIREWALL
 iptables -t filter -F
 iptables -t filter -X
-systemctl enable firewalld
-systemctl start firewalld
 
 # STRICT POLICY
 iptables -t filter -P INPUT DROP
