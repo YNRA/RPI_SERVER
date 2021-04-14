@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-04-06T15:23:09.151Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" etag="0Jnro9sbRvrLKxSlg71X" version="14.5.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-04-14T14:12:44.810Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" etag="DYuPi0RuzOgp4zZsDMK7" version="14.6.0" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
-    <mxGraphModel dx="1988" dy="1315" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="1750" dy="1178" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -476,17 +476,20 @@
         <mxCell id="zEZFEKx2c9UliyfxBBdU-124" value="Contrôle" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="840" y="220" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="AzISiXjHZNzhisUvAuu7-7" value="" style="shape=flexArrow;endArrow=classic;html=1;strokeColor=#1A1A1A;fillColor=#FF0000;" edge="1" parent="1">
+        <mxCell id="AzISiXjHZNzhisUvAuu7-7" value="" style="shape=flexArrow;endArrow=classic;html=1;strokeColor=#1A1A1A;fillColor=#FF0000;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1111" y="210" as="sourcePoint" />
             <mxPoint x="1289.9999999999995" y="210" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="AzISiXjHZNzhisUvAuu7-8" value="SAMBA&lt;br&gt;(home/share)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="AzISiXjHZNzhisUvAuu7-8" value="SAMBA&lt;br&gt;(home/share)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1155" y="230" width="100" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="AzISiXjHZNzhisUvAuu7-10" value="&lt;font style=&quot;font-size: 14px&quot;&gt;Le vpn et le partage de fichier ont aussi était déployé sur interface graphique pour Windows pour une utilisation simple des moldu :p&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="AzISiXjHZNzhisUvAuu7-10" value="&lt;font style=&quot;font-size: 14px&quot;&gt;Le vpn et le partage de fichier ont aussi était déployé sur interface graphique pour Windows pour une utilisation simple des moldu :p&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1021" y="670" width="299" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="GJMZqyqhhcvYD0xbSVMn-1" value="Backup of one rpi in the other" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="405" y="140" width="140" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
