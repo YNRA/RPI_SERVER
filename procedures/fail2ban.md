@@ -35,3 +35,7 @@ fail2ban-client set [jail_name] unbanip [IP]
 # check logs
 
 sudo tail -f /var/log/fail2bab.log
+
+# check ip ban 
+
+fail2ban-client status sshd
