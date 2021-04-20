@@ -32,3 +32,26 @@ sudo apt-get install logstash
 Le fichier de configuration de Logstash est le suivant : /etc/logstash/logstash.yml et permet de configurer des paramètres généraux comme par exemple le nom du nœud, le port, le niveau des logs etc... Pour ce cours nous laisserons la configuration par défaut.
 sudo systemctl start logstash
 sudo journalctl -f -u logstash
+
+sudo nano /etc/kibana/kibana.yml
+server.host: "10.6.0.1"
+
+
+sudo apt-get install filebeat
+sudo systemctl enable filebeat
+/etc/filebeat/filebeat.yml
+mettre l'addresse voulu
+
+sudo filebeat modules enable auditd
+sudo filebeat setup
+sudo service filebeat start
+
+sudo filebeat modules list
+sudo nano /etc/filebeat/modules.d/iptables.yml
+/var/log 
+
+DANS LE MONITORING:
+- brute force sur ssh
+- le vpn (actif/qui et combien de gens dessus)
+- l'état du fichier samba
+- état du systeme
