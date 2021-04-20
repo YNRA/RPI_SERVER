@@ -39,6 +39,8 @@ iptables -A INPUT -p tcp --dport 53 -m state --state NEW -j ACCEPT
 iptables -A INPUT -p udp --dport 53 -m state --state NEW -j ACCEPT
 iptables -A INPUT -p tcp --sport 51330 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
 iptables -A INPUT -p udp --sport 51330 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -p tcp --dport 51330 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -p udp --dport 51330 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
 
 # VPN ROUTE
 # NAT RULES
