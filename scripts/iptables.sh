@@ -1,5 +1,5 @@
 echo "Applying rules, starting firewall ..."
-sleep 1
+#sleep 1
 
 # FLUSH RULES
 iptables -t filter -F
@@ -61,5 +61,5 @@ iptables -A INPUT -m limit --limit 5/min -j LOG --log-prefix "IPTABLES DENIED: "
 sysctl -w net.ipv4.ip_forward=1
 
 echo "Done ! Rules applied : "
-sleep 1
+#sleep 1
 iptables -L
