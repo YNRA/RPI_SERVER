@@ -22,9 +22,7 @@ iptables -A INPUT -p tcp --tcp-flags SYN,RST SYN,RST -j DROP
 iptables -A FORWARD -p tcp --tcp-flags SYN,ACK,FIN,RST RST -m limit --limit 1/s -j ACCEPT
 
 # ACCEPT FROM VPN NETWORK
-iptables -A INPUT -p icmp -s 10.6.0.0/29 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
-iptables -A INPUT -p tcp -s 10.6.0.0/29 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
-iptables -A INPUT -p udp -s 10.6.0.0/29 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -s 10.6.0.0/29 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
 
 # ACCEPT LOOPBACK, DROP TRAFFIC TO 127.0 THAT DOESN'T USE LO
 iptables -A INPUT -i lo -j ACCEPT
@@ -39,7 +37,8 @@ iptables -A INPUT -p tcp --dport 443 -m state --state NEW -j ACCEPT
 iptables -A INPUT -p tcp --dport 22 -m state --state NEW -j ACCEPT
 iptables -A INPUT -p tcp --dport 53 -m state --state NEW -j ACCEPT
 iptables -A INPUT -p udp --dport 53 -m state --state NEW -j ACCEPT
-iptables -A INPUT -p tcp --dport 51330 -m state --state NEW, ESTABLISHED, RELATED -j ACCEPT
+iptables -A INPUT -p tcp --sport 51330 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -p udp --sport 51330 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
 
 # VPN ROUTE
 # NAT RULES
