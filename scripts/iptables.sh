@@ -23,6 +23,8 @@ iptables -A FORWARD -p tcp --tcp-flags SYN,ACK,FIN,RST RST -m limit --limit 1/s 
 
 # ACCEPT FROM VPN NETWORK
 iptables -A INPUT -p icmp -s 10.6.0.0/29 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -p tcp -s 10.6.0.0/29 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -p udp -s 10.6.0.0/29 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
 
 # ACCEPT LOOPBACK, DROP TRAFFIC TO 127.0 THAT DOESN'T USE LO
 iptables -A INPUT -i lo -j ACCEPT
