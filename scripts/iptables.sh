@@ -14,18 +14,18 @@ iptables -A INPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT
 iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT
 
 # DROP XMAS, NULL, PORTS SCANS
-iptables -A INPUT -p tcp --tcp-flags FIN,URG,PSH FIN,URG,PSH -j DROP
-iptables -A INPUT -p tcp --tcp-flags ALL ALL -j DROP
-iptables -A INPUT -p tcp --tcp-flags ALL NONE -j DROP
-iptables -A INPUT -p tcp --tcp-flags SYN,RST SYN,RST -j DROP
-iptables -A FORWARD -p tcp --tcp-flags SYN,ACK,FIN,RST RST -m limit --limit 1/s -j ACCEPT
+#iptables -A INPUT -p tcp --tcp-flags FIN,URG,PSH FIN,URG,PSH -j DROP
+#iptables -A INPUT -p tcp --tcp-flags ALL ALL -j DROP
+#iptables -A INPUT -p tcp --tcp-flags ALL NONE -j DROP
+#iptables -A INPUT -p tcp --tcp-flags SYN,RST SYN,RST -j DROP
+#iptables -A FORWARD -p tcp --tcp-flags SYN,ACK,FIN,RST RST -m limit --limit 1/s -j ACCEPT
 
 # ACCEPT FROM VPN NETWORK
 iptables -A INPUT -s 10.6.0.0/29 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
 
 # ACCEPT LOOPBACK, DROP TRAFFIC TO 127.0 THAT DOESN'T USE LO
-iptables -A INPUT -i lo -j ACCEPT
-iptables -A INPUT -d 127.0.0.0/8 -j REJECT
+#iptables -A INPUT -i lo -j ACCEPT
+#iptables -A INPUT -d 127.0.0.0/8 -j REJECT
 
 # ALLOW OUTBOUND TRAFFIC
 iptables -A OUTPUT -j ACCEPT
@@ -60,7 +60,7 @@ iptables -A INPUT -p udp -s 10.6.0.0/29 --dport 445 -j ACCEPT
 #iptables -A FORWARD -i wg0 -o wlan0 -j ACCEPT
 
 # LOG DENIED IP
-iptables -A INPUT -m limit --limit 5/min -j LOG --log-prefix "IPTABLES DENIED: " --log-level 7
+#iptables -A INPUT -m limit --limit 5/min -j LOG --log-prefix "IPTABLES DENIED: " --log-level 7
 
 # TURN ON IP FORWARDING
 #systemctl -w net.ipv4.ip_forward=1
