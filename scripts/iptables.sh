@@ -1,5 +1,4 @@
 echo "Applying rules, starting firewall ..."
-#sleep 1
 
 # FLUSH RULES
 iptables -t filter -F
@@ -50,22 +49,21 @@ iptables -A INPUT -p udp -s 10.6.0.0/29 --dport 445 -j ACCEPT
 
 # VPN ROUTE
 # NAT RULES
-iptables -t nat -A POSTROUTING -s 10.6.0.0/29 -o wlan0 -j MASQUERADE
-iptables -t nat -A POSTROUTING -s 10.6.0.0/29 -o eth0 -j MASQUERADE
+#iptables -t nat -A POSTROUTING -s 10.6.0.0/29 -o wlan0 -j MASQUERADE
+#iptables -t nat -A POSTROUTING -s 10.6.0.0/29 -o eth0 -j MASQUERADE
 # ACCEPT TRAFFIC CREATED BY WG0 INTERFACE
-iptables -A INPUT -i wg0 -j accept
+#iptables -A INPUT -i wg0 -j accept
 # ALLOW PACKET BEING ROUTED THROUGH WG SERVER 
-iptables -A FORWARD -i eth0 -o wg0 -j ACCEPT
-iptables -A FORWARD -i wlan0 -o wg0 -j ACCEPT
-iptables -A FORWARD -i wg0 -o eth0 -j ACCEPT
-iptables -A FORWARD -i wg0 -o wlan0 -j ACCEPT
+#iptables -A FORWARD -i eth0 -o wg0 -j ACCEPT
+#iptables -A FORWARD -i wlan0 -o wg0 -j ACCEPT
+#iptables -A FORWARD -i wg0 -o eth0 -j ACCEPT
+#iptables -A FORWARD -i wg0 -o wlan0 -j ACCEPT
 
 # LOG DENIED IP
 iptables -A INPUT -m limit --limit 5/min -j LOG --log-prefix "IPTABLES DENIED: " --log-level 7
 
 # TURN ON IP FORWARDING
-systemctl -w net.ipv4.ip_forward=1
+#systemctl -w net.ipv4.ip_forward=1
 
 echo "Done ! Rules applied : "
-#sleep 1
 iptables -L
