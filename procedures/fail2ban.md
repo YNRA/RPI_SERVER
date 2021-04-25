@@ -34,7 +34,7 @@ fail2ban-client set [jail_name] unbanip [IP]
 
 # check logs
 
-sudo tail -f /var/log/fail2bab.log
+sudo tail -f /var/log/fail2ban.log
 
 # check ip ban 
 
