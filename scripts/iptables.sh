@@ -11,8 +11,8 @@ iptables -t filter -P OUTPUT DROP
 iptables -t filter -P FORWARD DROP
 
 # ACCEPT ESTABLISHED INBOUND CONNECTIONS
-iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT
+iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT
 
 # DROP XMAS, NULL, PORTS SCANS
 iptables -A INPUT -p tcp --tcp-flags FIN,URG,PSH FIN,URG,PSH -j DROP
@@ -41,6 +41,12 @@ iptables -A INPUT -p tcp --sport 51330 -m state --state NEW,ESTABLISHED,RELATED 
 iptables -A INPUT -p udp --sport 51330 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
 iptables -A INPUT -p tcp --dport 51330 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
 iptables -A INPUT -p udp --dport 51330 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -p icmp -j ACCEPT
+iptables -A INPUT -p tcp -s 10.6.0.0/29 --dport 139 -j ACCEPT
+iptables -A INPUT -p tcp -s 10.6.0.0/29 --dport 445 -j ACCEPT
+iptables -A INPUT -p udp -s 10.6.0.0/29 --dport 137 -j ACCEPT
+iptables -A INPUT -p udp -s 10.6.0.0/29 --dport 138 -j ACCEPT
+iptables -A INPUT -p udp -s 10.6.0.0/29 --dport 445 -j ACCEPT
 
 # VPN ROUTE
 # NAT RULES
