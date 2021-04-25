@@ -49,10 +49,13 @@ iptables -A INPUT -p udp -s 10.6.0.0/29 --dport 445 -j ACCEPT
 
 # VPN ROUTE
 # NAT RULES
-#iptables -t nat -A POSTROUTING -s 10.6.0.0/29 -o wlan0 -j MASQUERADE
-#iptables -t nat -A POSTROUTING -s 10.6.0.0/29 -o eth0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -s 10.6.0.0/29 -o wlan0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -s 10.6.0.0/29 -o eth0 -j MASQUERADE
 # ACCEPT TRAFFIC CREATED BY WG0 INTERFACE
-#iptables -A INPUT -i wg0 -j accept
+iptables -A INPUT -i wg0 -j accept
+iptables -A FORWARD -i wg0 -j accept
+iptables -A FORWARD -o wg0 -j accept
+
 # ALLOW PACKET BEING ROUTED THROUGH WG SERVER 
 #iptables -A FORWARD -i eth0 -o wg0 -j ACCEPT
 #iptables -A FORWARD -i wlan0 -o wg0 -j ACCEPT
