@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-04-26T08:49:10.300Z" agent="5.0 (Macintosh)" etag="NOjrjBXs_ha1KT3Nk07O" version="14.6.6" type="github">
+<mxfile host="app.diagrams.net" modified="2021-04-26T10:12:53.825Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36" etag="fJpbug2fmXG0MhEgF0Kh" version="14.6.3" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
-    <mxGraphModel dx="1972" dy="1446" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="1750" dy="1178" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -484,6 +484,21 @@
         </mxCell>
         <mxCell id="GJMZqyqhhcvYD0xbSVMn-1" value="Backup of one rpi in the other" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="405" y="140" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YOZUf8CSChgkDbVyqQm4-1" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="660" width="60" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="YOZUf8CSChgkDbVyqQm4-2" value="Phone" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="610" y="690" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="YOZUf8CSChgkDbVyqQm4-3" value="" style="shape=flexArrow;endArrow=classic;html=1;strokeColor=#1A1A1A;fillColor=#B3B3B3;entryX=0.593;entryY=1.002;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="632.85" y="658.9" as="sourcePoint" />
+            <mxPoint x="630.0000000000001" y="599.9999999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YOZUf8CSChgkDbVyqQm4-4" value="Private VPN" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="652.85" y="618.9" width="40" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
