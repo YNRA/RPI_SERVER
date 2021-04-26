@@ -55,3 +55,9 @@ DANS LE MONITORING:
 - le vpn (actif/qui et combien de gens dessus)
 - l'état du fichier samba
 - état du systeme
+
+ sudo -u logstash /usr/share/logstash/bin/logstash  -f /etc/logstash/conf.d/samba.conf
+
+sudo cat /etc/logstash/conf.d/samba.conf 
+
+pour afficher les logs de samba -> créer graf avec filebeat comme patern -> filtrer sur process.name = smbd_audit par exemple
