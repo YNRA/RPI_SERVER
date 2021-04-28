@@ -1,10 +1,12 @@
+# Installer samba
 sudo apt-get install samba samba-common-bin
 
-
+# Modifier la configuration
 sudo nano /etc/samba/smb.conf
 
 [dans_global]
 
+   <!-- création des logs -->
    log file = /var/log/samba/global.log
 
    log level = 1 vfs:10
@@ -16,8 +18,13 @@ sudo nano /etc/samba/smb.conf
    full_audit:facility = local1
    full_audit:priority = NOTICE INFO
 
+   <!-- local1.*        /var/log/samba/log.audit
+   les log de rsyslog (var/log/syslog) marqué local1 sont redirigé dans /var/log/samba/log.audit
+   /etc/init.d/rsyslog restart -->
+
 [sharedwithsneaky]
 
+   <!-- création du dossié de partage avec Arnaud -->
 path = /home/shared/shared_sneaky
 writeable = yes
 public=no
@@ -28,6 +35,7 @@ force directory mode = 0777
 
 [sharedhome]
 
+   <!-- création du dossié de partage pour la maison -->
 path = /home/shared/shared_home
 writeable = yes
 public=no
@@ -36,46 +44,13 @@ browseable = yes
 write list = home
 force directory mode = 0777
 
- 1414  sudo adduser charline
- 1415  cat /etc/group
- 1416  sudo smbpasswd -a charline
- sudo systemctl restart smbd
 
-dans -> etc/rsyslog.conf
-
-local1.*        /var/log/samba/log.audit
-les log de rsyslog (var/log/syslog) marqué local1 sont redirigé dans /var/log/samba/log.audit
-/etc/init.d/rsyslog restart
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### SAMBA
-
-sudo smbpasswd -a XXX mettre mfp user
-sudo nano /etc/samba/smb.conf
+# Créer les utilisateurs samba
+sudo adduser XXX
+sudo smbpasswd -a XXX
 sudo systemctl restart smbd
 
-sudo mount -t cifs -o user=gomonriou,rw,uid=1000,gid=1000 //10.6.0.1/sharedwithsneaky /home/gomonriou/Documents/projet_b3/shared/sneaky
-sudo mount -t cifs -o user=gomonriou,rw,uid=1000,gid=1000 //10.6.0.1/sharedhome /home/gomonriou/Documents/projet_b3/shared/home
-
-le mdp est dans dashlane
-pour la maison mettre l'adresse 192.168.1.100
+# Pour monter le dossié
+sudo mount -t cifs -o user=XXXX,rw,uid=1000,gid=1000 //10.6.0.1/sharedwithsneaky /path
 
 
-
-
-
-
-sudo cat /var/log/syslog | grep smb
