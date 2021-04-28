@@ -1,3 +1,0 @@
-# DAILY CRON SCRIPT
-# chmod 755
-
