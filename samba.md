@@ -8,7 +8,7 @@ sudo apt-get install samba samba-common-bin
 # Configuration
 sudo vim /etc/samba/smb.conf
 
-	 [global]
+   [global]
    # Création des logs
    log file = /var/log/samba/global.log
    log level = 1 vfs:10
@@ -19,7 +19,7 @@ sudo vim /etc/samba/smb.conf
    full_audit:facility = local1
    full_audit:priority = NOTICE INFO
 
-	[sharedwithsneaky]
+  [sharedwithsneaky]
   # Création du dossier partagé avec l'autre RPi
   path = /home/shared/shared_sneaky
   writeable = yes
