@@ -6,23 +6,7 @@
 | Arnaud BOYÉ (@YNRA)                 | B3     | Sécurité Informatique |
 | Thomas DEJEANNE (@Gomonriou)        | B3     | Sécurité Informatique |
 
-* Home server shared between us
-    * Hidden Service TOR
-    * Clear Web (Apache)
-
-* VPN
-* Attack device w/ mandatory tools only (Fuzzing, Network Mapping, Cracking, etc.)
-    * Katoolin (install tools, update, etc.)
-* Security hardening
-    * Partitioning
-    * SSH w/ authorized keys and hosts only (us)
-    * Monitoring (Netdata? Grafana? Prometheus?)
-    * HIDS
-    * Firewall (Iptables?)
-    * Local storage
-    * Backups & Restoration (CRON, DB)
-    * Restrictions & SSH Jail (Fail2Ban, Endless SSH) 
-    * VPN 1:1 between hosts
+Le projet présenté consiste en un cluster de Raspberry Pi, connectés via un VPN configuré sous Wireguard.
 
 **Documentation:**
 
@@ -38,11 +22,3 @@
 * [IPTABLES on RPI](https://www.fanjoe.be/?p=1003)
 * [Endless SSH](https://github.com/skeeto/endlessh)
 
-## TO DO
-* Trello ? 
-
-## OS choice
- * 64-bits (use everything)
- * Update frequency
- * No desktop, only CLI
- * Lightweight
