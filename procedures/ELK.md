@@ -60,7 +60,7 @@ tout d'abbord ajouter logstash au groupe adm qui est utilisé pour le monitoring
     sudo usermod -aG adm logstash
 
 nous pouvons ensuite créer et remplir le fichier de configuration /etc/logstash/conf.d/samba.conf, il faut le composer en 3 points
-- input en renseigant le fichier de log souhaité du type file ici 
+- input en renseigant le fichier de log souhaité du type file ici (il vous sera probablement obliger d'indiquer explicitement 'sincedb_path' -> répertoire où logstash a l'autorisation d'écriture pour le registre )
 - le filtre qui doit etre construit en fonction de la structure de votre fichier de log ici:
     mutate { gsub => ["message","\|",":"] }
     grok { match => { "message" => "%{MONTH:syslog_month} %{MONTHDAY:syslog_day} %{TIME:syslog_time} localhost smbd\[%{INT:pid}\]: %{USER:user_service}:%{USER:user_session}:%{IP:client_ip}:%{HOSTNAME:client_NETBIOS}$ }
@@ -72,5 +72,5 @@ logstash propose plusieurs options pratiques -t (pour controler automatiquement 
 
 Nous pouvons maintenant récupérer notre index (logstash-XXX) dans kibana/management/index et créer les visualisations que l'on souhaite intégrer a nos dashboards
 
-( Une autre manière de faire consiste à récupérer les logs depuis 'syslog' avec filebeat et de faire nos dashboards en filtra par exemple sur process.name )
+( Une autre manière de faire consiste à récupérer les logs depuis 'syslog' avec filebeat et de faire nos dashboards en filtra par exemple sur process.name pour cela rajouter juste le path du fichier de log voulu dans /etc/filebeat/filebeat.yml)
 
