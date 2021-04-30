@@ -1,7 +1,7 @@
 # Installer le service TOR
         apt-get install tor
 
-# Créer le dossié du service web
+# Créer le dossier du service web
         mkdir /var/www/darkserver
         touch /var/www/darkserver/index.html
 
